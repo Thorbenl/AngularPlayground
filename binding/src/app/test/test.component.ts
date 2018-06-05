@@ -4,17 +4,22 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-test',
   template:`
     <h2>{{ "Whalecum " + name}}</h2>
-    <h2>{{name.length}}</h2>
-    <h2>{{name.toUpperCase()}}</h2>
+    <input [(ngModel)]="name" type="text">
+    {{name}}
   `,
   styles: []
 })
 export class TestComponent implements OnInit {
 
-  public name = "Bubschi";
+  public name = "";
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  logMsg(value) {
+    console.log(value);
   }
 
 }
